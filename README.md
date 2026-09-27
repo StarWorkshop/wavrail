@@ -40,6 +40,15 @@ wavrail demo
 wavrail --help
 ```
 
+## 文档
+
+- [使用指南](docs/usage.md)：音频处理、特征、解码、训练与流式管道
+- [CLI 参考](docs/cli.md)：所有子命令及参数
+- [API 约定](docs/api.md)：公共类型、边界校验与确定性约定
+- [架构说明](docs/architecture.md)：模块边界与数据流
+- [数值容差策略](docs/numerical_tolerance.md)：golden 测试和数值算法的容差规则
+- [可运行示例](examples/README.md)：离线特征、解码、训练和音频质量示例
+
 ## 开发
 
 ```bash
