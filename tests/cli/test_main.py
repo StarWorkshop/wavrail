@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import subprocess
+import sys
 
 import pytest
 
@@ -17,6 +19,16 @@ def wav_path(tmp_path) -> str:
     path = tmp_path / "tone.wav"
     write_wav(str(path), samples, sample_rate=16000)
     return str(path)
+
+
+def test_module_entrypoint_reports_version() -> None:
+    result = subprocess.run(
+        [sys.executable, "-m", "wavrail", "--version"],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert result.stdout.strip().startswith("wavrail ")
 
 
 def test_no_command_returns_zero(capsys) -> None:
