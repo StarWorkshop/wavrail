@@ -5,6 +5,8 @@ from __future__ import annotations
 import numpy as np
 import pytest
 
+pytest.importorskip("torch")
+
 from wavrail.ctc import Hypothesis
 from wavrail.errors import ModelError
 from wavrail.model import build_synthetic_dataset, decode_example, model_posteriors
