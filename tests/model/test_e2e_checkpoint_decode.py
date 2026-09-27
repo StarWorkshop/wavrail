@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import pytest
 
+pytest.importorskip("torch")
+
 from wavrail.model import (
     TrainingConfig,
     build_synthetic_dataset,
